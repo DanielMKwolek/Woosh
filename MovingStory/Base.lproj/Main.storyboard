@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +18,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muO-a5-2zi">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="OT1-G4-zCc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydo-Cx-84G"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a sentence" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1L2-fi-QNq">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="muO-a5-2zi" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2PS-Nc-Nb0"/>
+                            <constraint firstItem="1L2-fi-QNq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="DzL-Oe-Bps"/>
+                            <constraint firstItem="1L2-fi-QNq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Qhl-WM-nJy"/>
+                            <constraint firstItem="1L2-fi-QNq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UAW-r1-GcO"/>
+                            <constraint firstItem="1L2-fi-QNq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:4" id="Uqx-PK-u7Z"/>
+                            <constraint firstItem="muO-a5-2zi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zof-5e-Z4o"/>
+                            <constraint firstItem="muO-a5-2zi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bI1-si-eau"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainButton" destination="muO-a5-2zi" id="gg6-Ey-Rtt"/>
+                        <outlet property="textField" destination="1L2-fi-QNq" id="DHp-YN-pRd"/>
+                        <outlet property="textFieldConstraint" destination="UAW-r1-GcO" id="MMm-0S-PTv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
